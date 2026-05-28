@@ -12,6 +12,10 @@
 <body>
 
 <div class="lockscreen">
+
+    <!-- DOWNLOAD BUTTON -->
+    <button id="installBtn" class="install-btn">Download App</button>
+
     <div class="time" id="time"></div>
     <div class="date" id="date"></div>
 
@@ -25,6 +29,7 @@
 </div>
 
 <script src="app.js"></script>
+
 <script>
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
