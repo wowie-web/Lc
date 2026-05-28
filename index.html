@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Runner 2D: Boss Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <div class="hud-panel">
+            <div class="score-box">SCORE: <span id="current-score">0000</span></div>
+            <div class="score-box boss-health-alert">BOSS HP: <span id="boss-hp">100%</span></div>
+            <div class="score-box high-score">HI-SCORE: <span id="high-score">0000</span></div>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="300"></canvas>
+
+        <div id="start-overlay" class="overlay">
+            <div class="overlay-content">
+                <h2>BOSS ENCOUNTER</h2>
+                <p>Press <span class="key-badge">SPACEBAR</span> to Jump over incoming projectiles!</p>
+                <button class="btn-action" onclick="startGame()">ENGAGE BOSS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
