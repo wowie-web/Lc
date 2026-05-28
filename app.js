@@ -45,7 +45,6 @@ input.addEventListener("change", () => {
     history.push(input.value);
     localStorage.setItem("history", JSON.stringify(history));
 
-    // ADMIN MODE
     if (input.value === "admin") {
         showHistory();
     }
@@ -60,3 +59,25 @@ function showHistory() {
     historyDiv.classList.remove("hidden");
     historyDiv.innerHTML = "<b>Password Attempts:</b><br>" + history.join("<br>");
 }
+
+
+// INSTALL APP LOGIC
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+});
+
+installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt = null;
+    }
+});
+
+// AUTO HIDE BUTTON AFTER 5 SECONDS
+setTimeout(() => {
+    installBtn.classList.add("hidden");
+}, 5000);
